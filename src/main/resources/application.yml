@@ -1,0 +1,22 @@
+server:
+  port: 8080 # Specifies the server port that the application will listen on.
+  error:
+    include-message: always # Includes error message in the response body for all exceptions.
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5332/customer # JDBC URL of the PostgreSQL database.
+    username: amigoscode # Database username for authentication.
+    password: password # Database password for authentication.
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop # Configures Hibernate to create the database schema on startup and drop it on shutdown.
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect # Specifies the Hibernate dialect for PostgreSQL.
+        format_sql: true # Enables formatting of SQL logged by Hibernate.
+    show-sql: false # Disables the logging of SQL statements by Hibernate.
+
+  main:
+    web-application-type: servlet # Configures the application to use a servlet-based web application type.
